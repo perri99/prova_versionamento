@@ -1,3 +1,5 @@
+from CioccolataCalda import CioccolataCalda
+
 class Fabbrica:
     def __init__(self):
         self.prodotti = []
@@ -10,3 +12,8 @@ class Fabbrica:
         else:
             print('Cioccolato finito')
 
+prodotti = [CioccolataCalda('Latte', 50, 34, 34)]
+Fab = Fabbrica()
+
+for prodotto in prodotti:
+    Fab.produci(prodotto)
