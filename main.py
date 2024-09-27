@@ -1,7 +1,5 @@
 
 from Cioccolatini import Cioccolatino
-
-
 from Tavoletta import Tavoletta
 from CioccolataCalda import CioccolataCalda
 
@@ -16,23 +14,23 @@ class Fabbrica:
         self.costo_totale += Prodotto.get_costo()
         if self.costo_totale <= 100:
             Prodotto.produce()
+            return True
         else:
             print('Cioccolato finito')
+            return False
 
-prodotti3 = [Cioccolatino('Gianduiotto', 50, 'ret', 'giand')]
 
 Fab = Fabbrica()
-for prodotto in prodotti3:
-    Fab.produci(prodotto)
-=======
-prodotti2 = [Tavoletta('Bianca', 50, 800, 'nocciole')]
 
-for prodotto in prodotti2:
-    Fab.produci(prodotto)
-prodotti = [CioccolataCalda('Latte', 50, 34, 34)]
+prodotti = [CioccolataCalda('Latte', 50, 34, 34), 
+            Tavoletta('Bianca', 50, 800, 'nocciole'), 
+            Cioccolatino('Gianduiotto', 50, 'ret', 'giand')]*100
 
 
 for prodotto in prodotti:
-    Fab.produci(prodotto)
+    check = Fab.produci(prodotto)
+    if not check:
+        print('Fabbrica chiusa')
+        break
 
 
