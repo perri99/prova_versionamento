@@ -12,7 +12,7 @@ class Fabbrica:
         else:
             print('Cioccolato finito')
 
-prodotti = [Tavoletta('Bianca', 50, 800, 'nocciole')]
+prodotti2 = [Tavoletta('Bianca', 50, 800, 'nocciole')]
 Fab = Fabbrica()
-for prodotto in prodotti:
+for prodotto in prodotti2:
     Fab.produci(prodotto)
