@@ -1,3 +1,5 @@
+from Tavoletta import Tavoletta
+
 class Fabbrica:
     def __init__(self):
         self.prodotti = []
@@ -10,3 +12,7 @@ class Fabbrica:
         else:
             print('Cioccolato finito')
 
+prodotti = [Tavoletta('Bianca', 50, 800, 'nocciole')]
+Fab = Fabbrica()
+for prodotto in prodotti:
+    Fab.produci(prodotto)
